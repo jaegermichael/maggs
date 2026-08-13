@@ -20,7 +20,7 @@ Laser CNC structural design and fabrication: gates, privacy screens, wall claddi
 ## Stack
 
 - Next.js 15 (App Router)
-- React 18 + TypeScript
+- React 19 + TypeScript
 - Tailwind CSS
 - Three.js + React Three Fiber + Drei
 - Framer Motion
