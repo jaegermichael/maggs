@@ -1,42 +1,28 @@
 # Maggs Engineering & Consultancy
 
-Premium Next.js web app for **Maggs Engineering Group**.
+React + Vite web app for **Maggs Engineering Group**.
 
 Laser CNC structural design and fabrication: gates, privacy screens, wall cladding, signage, renovations, and general engineering.
 
-## Brand
-
-| Token | Value |
-|---|---|
-| Name | Maggs Engineering & Consultancy |
-| Group | Maggs Engineering Group |
-| Phone | 0772780125 |
-| Orange | `#E65714` |
-| Black | `#121212` |
-| Paper | `#FAFAFA` |
-| Tagline | Stylish. Secure. Built for you. |
-| Gates from | £250 |
-
 ## Stack
 
-- Next.js 15 (App Router)
 - React 19 + TypeScript
+- Vite 7
+- React Router
 - Tailwind CSS
 - Three.js + React Three Fiber + Drei
 - Framer Motion
 
-## Pages
+## Routes
 
-| Route | Description |
-|---|---|
-| `/` | Home with 3D hero gate + laser field |
-| `/about` | Studio story |
-| `/services` | Six fabrication services |
-| `/portfolio` | Interactive project gallery |
-| `/configurator` | Live 3D gate builder + estimate |
-| `/process` | Four-stage method |
-| `/contact` | Phone / email |
-| `/quote` | Enquiry form (prefills from configurator) |
+- `/` Home with interactive 3D gate and laser scene
+- `/about`
+- `/services`
+- `/portfolio`
+- `/configurator` live 3D gate builder and estimate
+- `/process`
+- `/contact`
+- `/quote`
 
 ## Develop
 
@@ -45,20 +31,11 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build
+## Production
 
 ```bash
 npm run build
-npm start
+npm run preview
 ```
 
-## Three.js scenes
-
-1. **GateScene** - extrude-cut gate with orbit controls, pattern swaps, sparks
-2. **LaserField** - moving laser beam, cut ring, particle field
-
-## Licence
-
-Private project for Maggs Engineering Group.
+The Vercel SPA rewrite is configured in `vercel.json`.
