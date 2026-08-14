@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "@/components/ui/Image";
-import { GateScene } from "@/components/three/GateScene";
 import { Link } from "@/components/ui/Link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
@@ -83,7 +82,7 @@ export function HomeHero() {
                   Prices from as low as
                 </p>
                 <p className="font-display text-4xl leading-none">
-                  £{brand.pricesFrom}
+                  ${brand.pricesFrom.toLocaleString("en-US")}
                 </p>
               </div>
               <div className="rounded-xl bg-black px-2 py-1 text-[10px] font-bold uppercase tracking-wider">
@@ -95,20 +94,23 @@ export function HomeHero() {
           </div>
         </div>
 
-        <div className="relative min-h-[420px] border-t border-white/10 lg:border-l lg:border-t-0">
-          <GateScene pattern="geo-slash" color="#2F2F2F" accent="#171717" />
-          <div className="absolute left-4 top-4 z-10 overflow-hidden rounded-2xl border border-white/10 shadow-panel">
-            <Image
-              src="/images/gate-hero.jpg"
-              alt="Installed Maggs driveway gate"
-              width={180}
-              height={120}
-              className="h-24 w-36 object-cover"
-            />
+        <div className="relative min-h-[420px] overflow-hidden border-t border-white/10 lg:border-l lg:border-t-0">
+          <Image
+            src="/images/gate-hero.jpg"
+            alt="Installed custom laser-cut Maggs driveway gate"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/10" />
+          <div className="absolute bottom-5 left-5 right-5 z-10 rounded-2xl bg-black/60 p-4 text-white backdrop-blur">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-maggs-orange">
+              Featured installation
+            </p>
+            <p className="mt-1 text-sm text-white/80">
+              Custom geometric steel gate with a durable powder-coated finish.
+            </p>
           </div>
-          <p className="absolute bottom-4 left-4 z-10 rounded-full bg-black/55 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur">
-            Drag to orbit · live CNC preview
-          </p>
         </div>
       </div>
     </section>

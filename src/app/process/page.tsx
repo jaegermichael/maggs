@@ -1,5 +1,5 @@
+import Image from "@/components/ui/Image";
 import { Link } from "@/components/ui/Link";
-import { LaserFieldLazy } from "@/components/three/LaserFieldLazy";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { processSteps } from "@/data/site";
 
@@ -14,10 +14,14 @@ export default function ProcessPage() {
             title="Four moves. No fog."
             body="Whether you arrive with architect drawings or a phone photo of the driveway, Maggs keeps the path simple."
           />
-          <div className="overflow-hidden rounded-[1.75rem] bg-maggs-black shadow-panel">
-            <div className="h-[300px]">
-              <LaserFieldLazy />
-            </div>
+          <div className="relative h-[300px] overflow-hidden rounded-[1.75rem] bg-maggs-black shadow-panel">
+            <Image
+              src="/images/workshop.jpg"
+              alt="Maggs CNC engineering workshop"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           </div>
         </div>
 

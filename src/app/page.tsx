@@ -5,7 +5,6 @@ import { CtaBand } from "@/components/home/CtaBand";
 import { HomeHero } from "@/components/home/HomeHero";
 import { PortfolioStrip } from "@/components/home/PortfolioStrip";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
-import { LaserFieldLazy } from "@/components/three/LaserFieldLazy";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { processSteps } from "@/data/site";
 
@@ -44,11 +43,16 @@ export default function HomePage() {
               See the full process
             </Link>
           </div>
-          <div className="relative min-h-[360px] bg-maggs-black">
-            <LaserFieldLazy className="absolute inset-0" />
-            <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-black/55 p-4 text-sm text-white/80 backdrop-blur">
-              Live laser path visualisation. Pattern nesting and cut simulation
-              inspired by the Maggs workshop floor.
+          <div className="relative min-h-[360px] overflow-hidden bg-maggs-black">
+            <Image
+              src="/images/workshop.jpg"
+              alt="Laser CNC cutting equipment in the Maggs workshop"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-black/60 p-4 text-sm text-white/80 backdrop-blur">
+              Fibre laser cutting, fabrication and finishing completed in a professional engineering workshop.
             </div>
           </div>
         </div>
@@ -77,7 +81,7 @@ export default function HomePage() {
               {[
                 ["14+", "Years making"],
                 ["860+", "Pieces delivered"],
-                ["£250", "Gates from"],
+                ["$250", "Gates from"],
               ].map(([n, l]) => (
                 <div key={l} className="rounded-2xl bg-white p-4 shadow-sm">
                   <p className="font-display text-3xl text-maggs-orange">{n}</p>
