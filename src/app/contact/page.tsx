@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 import { Mail, Phone } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { brand } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Contact",
-};
 
 export default function ContactPage() {
   return (

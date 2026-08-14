@@ -7,6 +7,8 @@
   --maggs-orange: #e65714;
   --maggs-black: #121212;
   --maggs-paper: #fafafa;
+  --font-display: "Barlow Condensed", Impact, "Arial Black", sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
 }
 
 html {

@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/ui/Image";
+import { Link } from "@/components/ui/Link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-export const metadata: Metadata = {
-  title: "About",
-};
 
 export default function AboutPage() {
   return (
