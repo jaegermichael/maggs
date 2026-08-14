@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 import { LaserFieldLazy } from "@/components/three/LaserFieldLazy";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { processSteps } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Process",
-};
 
 export default function ProcessPage() {
   return (

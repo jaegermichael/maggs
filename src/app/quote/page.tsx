@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { QuoteForm } from "@/components/shared/QuoteForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { brand } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Request a quote",
-};
 
 export default function QuotePage() {
   return (

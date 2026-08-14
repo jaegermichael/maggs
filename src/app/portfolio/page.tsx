@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { useMemo, useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { portfolio } from "@/data/site";

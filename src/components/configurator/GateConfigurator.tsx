@@ -1,7 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
+import { GateScene } from "@/components/three/GateScene";
 import { useMemo, useState } from "react";
 import {
   gateFinishes,
@@ -9,18 +9,6 @@ import {
   gatePatterns,
 } from "@/data/site";
 import { formatCurrency } from "@/lib/utils";
-
-const GateScene = dynamic(
-  () => import("@/components/three/GateScene").then((m) => m.GateScene),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="grid h-full min-h-[420px] place-items-center bg-maggs-black text-white/50">
-        Building 3D preview…
-      </div>
-    ),
-  }
-);
 
 export function GateConfigurator() {
   const [pattern, setPattern] = useState(gatePatterns[0].id);
