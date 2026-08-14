@@ -1,15 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "@/components/ui/Image";
+import { Link } from "@/components/ui/Link";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { brand, nav } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
 
   return (

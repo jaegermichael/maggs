@@ -1,23 +1,11 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/ui/Image";
+import { GateScene } from "@/components/three/GateScene";
+import { Link } from "@/components/ui/Link";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { brand } from "@/data/site";
-
-const GateScene = dynamic(
-  () => import("@/components/three/GateScene").then((m) => m.GateScene),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex h-full min-h-[320px] items-center justify-center bg-maggs-black text-sm text-white/50">
-        Loading 3D gate…
-      </div>
-    ),
-  }
-);
 
 export function HomeHero() {
   return (

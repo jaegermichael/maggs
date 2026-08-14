@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from "@/components/ui/Image";
+import { Link } from "@/components/ui/Link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/data/site";

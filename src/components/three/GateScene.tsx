@@ -175,9 +175,9 @@ function Sparks() {
   const positions = useMemo(() => {
     const arr = new Float32Array(180);
     for (let i = 0; i < 60; i++) {
-      arr[i * 3] = (Math.random() - 0.5) * 6;
-      arr[i * 3 + 1] = Math.random() * 3 - 0.5;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 4;
+      arr[i * 3] = ((((i * 37) % 61) / 60) - 0.5) * 6;
+      arr[i * 3 + 1] = (((i * 23) % 59) / 58) * 3 - 0.5;
+      arr[i * 3 + 2] = ((((i * 43) % 67) / 66) - 0.5) * 4;
     }
     return arr;
   }, []);

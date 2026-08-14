@@ -69,9 +69,9 @@ function Particles() {
   const positions = useMemo(() => {
     const arr = new Float32Array(300);
     for (let i = 0; i < 100; i++) {
-      arr[i * 3] = (Math.random() - 0.5) * 8;
-      arr[i * 3 + 1] = Math.random() * 3;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 8;
+      arr[i * 3] = ((((i * 47) % 101) / 100) - 0.5) * 8;
+      arr[i * 3 + 1] = (((i * 31) % 97) / 96) * 3;
+      arr[i * 3 + 2] = ((((i * 59) % 103) / 102) - 0.5) * 8;
     }
     return arr;
   }, []);

@@ -1,11 +1,11 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "react-router-dom";
 import { FormEvent, useMemo, useState } from "react";
 import { services } from "@/data/site";
 
 export function QuoteForm() {
-  const params = useSearchParams();
+  const [params] = useSearchParams();
   const defaults = useMemo(
     () => ({
       type: params.get("type") || "",
