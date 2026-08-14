@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "@/components/ui/Image";
 import { Link } from "@/components/ui/Link";
-import { GateScene } from "@/components/three/GateScene";
 import { useMemo, useState } from "react";
 import {
   gateFinishes,
@@ -9,6 +9,14 @@ import {
   gatePatterns,
 } from "@/data/site";
 import { formatCurrency } from "@/lib/utils";
+
+const gatePreviewImages: Record<string, string> = {
+  "geo-slash": "/images/gate-hero.jpg",
+  lattice: "/images/privacy-screen.jpg",
+  horizon: "/images/renovation.jpg",
+  botanical: "/images/privacy-screen.jpg",
+  monolith: "/images/gate-hero.jpg",
+};
 
 export function GateConfigurator() {
   const [pattern, setPattern] = useState(gatePatterns[0].id);
@@ -31,26 +39,34 @@ export function GateConfigurator() {
     return Math.round(total);
   }, [pattern, material, finish, width, height, automation, pedestrian]);
 
-  const mat = gateMaterials.find((x) => x.id === material)!;
-  const fin = gateFinishes.find((x) => x.id === finish)!;
-  const previewColor =
-    finish === "maggs-orange" ? fin.color : mat.swatch || fin.color;
+  const selectedPattern = gatePatterns.find((x) => x.id === pattern)!;
+  const previewImage = gatePreviewImages[pattern] ?? "/images/gate-hero.jpg";
 
   const quoteHref = `/quote?type=Gates&pattern=${pattern}&material=${material}&finish=${finish}&width=${width}&height=${height}&estimate=${estimate}`;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="overflow-hidden rounded-[1.75rem] bg-maggs-black shadow-panel">
-        <div className="h-[460px] sm:h-[540px]">
-          <GateScene
-            pattern={pattern}
-            color={previewColor}
-            accent="#141414"
-            autoRotate
+        <div className="relative h-[460px] overflow-hidden sm:h-[540px]">
+          <Image
+            src={previewImage}
+            alt={`${selectedPattern.name} gate style reference`}
+            fill
+            priority
+            className="object-cover transition duration-500"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent" />
+          <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-black/60 p-4 text-white backdrop-blur">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-maggs-orange">
+              {selectedPattern.name}
+            </p>
+            <p className="mt-1 text-sm text-white/75">
+              Photo reference for your selected gate direction. Final drawings are prepared after the site survey.
+            </p>
+          </div>
         </div>
         <div className="flex items-center justify-between border-t border-white/10 px-5 py-4 text-sm text-white/70">
-          <p>Interactive CNC gate preview</p>
+          <p>Gate style photo preview</p>
           <p className="font-semibold text-maggs-orange">
             Est. {formatCurrency(estimate)}
           </p>

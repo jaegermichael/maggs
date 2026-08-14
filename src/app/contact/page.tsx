@@ -62,7 +62,7 @@ export default function ContactPage() {
               you already used the configurator, your estimate carries over.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-white/80">
-              <li>Premium gates from £{brand.pricesFrom}</li>
+              <li>Premium gates from ${brand.pricesFrom.toLocaleString("en-US")}</li>
               <li>Custom privacy screens and cladding</li>
               <li>Signage, renovations and general engineering</li>
             </ul>

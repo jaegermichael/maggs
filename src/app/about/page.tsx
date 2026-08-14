@@ -57,7 +57,7 @@ export default function AboutPage() {
             ],
             [
               "Direct delivery",
-              "Talk to the people making the work. Clear pricing paths from £250 gate packages upward.",
+              "Talk to the people making the work. Clear pricing paths from $250 gate packages upward.",
             ],
           ].map(([t, b]) => (
             <article key={t} className="card-surface p-6">

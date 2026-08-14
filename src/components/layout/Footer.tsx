@@ -75,7 +75,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="text-white/55">
-                Premium gates from £{brand.pricesFrom}
+                Premium gates from ${brand.pricesFrom.toLocaleString("en-US")}
               </li>
             </ul>
             <Link href="/quote" className="btn-primary mt-6">

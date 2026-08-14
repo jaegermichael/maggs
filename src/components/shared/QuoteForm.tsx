@@ -84,7 +84,7 @@ export function QuoteForm() {
         </label>
         <label className="field">
           <span>Estimate</span>
-          <input name="estimate" defaultValue={defaults.estimate ? `£${defaults.estimate}` : ""} readOnly />
+          <input name="estimate" defaultValue={defaults.estimate ? `$${defaults.estimate}` : ""} readOnly />
         </label>
       </div>
       <label className="field">
